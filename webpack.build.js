@@ -65,6 +65,10 @@ module.exports = {
                         outputPath: 'assets'
                     }
                 }
+            },
+            {
+                test: /\.svg/,
+                use: ['file-loader']
             }
         ]
     }
