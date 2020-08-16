@@ -1,10 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { changeStage, chooseProject, choosePayment } from '../action/action';
-import three_hr from '../asset/photo_3hr_unselected.svg'
-import twenty_four from '../asset/photo_24hr_unselected.svg'
-import thirty_day from '../asset/photo_30days_unselected.svg'
-import ninty_day from '../asset/photo_90days_unselected.svg'
 import credit_card from '../asset/icon_credit card.svg'
 import atm from '../asset/icon_atm.svg'
 import paypal from '../asset/icon_paypal.svg'
@@ -16,7 +12,7 @@ function FirstStage() {
     const data = useSelector(state => state)
     const dispatch = useDispatch()
     const movePage = (data) => { dispatch(changeStage(data)) };
-    const handlePayment = (data)=>{dispatch(choosePayment(data))};
+    const handlePayment = (data) => { dispatch(choosePayment(data)) };
     const handleProject = (data) => { dispatch(chooseProject(data)) };
 
     return (
@@ -29,25 +25,33 @@ function FirstStage() {
                             className={`${data.project == 1 && 'targeted'} cards__item--r`}
                             onClick={() => handleProject(1)}
                         >
-                            <img src={three_hr} className="obj obj--c" />
+                            <img
+                                src="https://raw.githubusercontent.com/chite/w4/master/src/asset/project1.svg"
+                                className="obj obj--c" />
                         </li>
                         <li
                             className={`${data.project == 2 && 'targeted'} cards__item--r`}
                             onClick={() => handleProject(2)}
                         >
-                            <img src={twenty_four} className="obj obj--c" />
+                            <img
+                                src="https://raw.githubusercontent.com/chite/w4/master/src/asset/project2.svg"
+                                className="obj obj--c" />
                         </li>
                         <li
                             className={`${data.project == 3 && 'targeted'} cards__item--r`}
                             onClick={() => handleProject(3)}
                         >
-                            <img src={thirty_day} className="obj obj--c" />
+                            <img
+                                src="https://raw.githubusercontent.com/chite/w4/master/src/asset/project3.svg"
+                                className="obj obj--c" />
                         </li>
                         <li
                             className={`${data.project == 4 && 'targeted'} cards__item--r`}
                             onClick={() => handleProject(4)}
                         >
-                            <img src={ninty_day} className="obj obj--c" />
+                            <img
+                                src="https://raw.githubusercontent.com/chite/w4/master/src/asset/project4.svg"
+                                className="obj obj--c" />
                         </li>
                     </ul>
                     <h1 className="stage__title">付款方式</h1>

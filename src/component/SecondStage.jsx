@@ -4,7 +4,6 @@ import { changeStage, writeData } from '../action/action'
 import card1 from '../asset/mastercard.png'
 import card2 from '../asset/visa.png'
 import card3 from '../asset/jcb.png'
-import ninty_day from '../asset/photo_90days_unselected.svg'
 
 const CheckingPage = () => (
   <section className="checkPage">
@@ -131,6 +130,7 @@ function SecondStage() {
               placeholder="0000-0000-0000-0000"
               className={`${!inputValid.creditCard && 'invalid'} inputGroup__input`}
               pattern="^(\d{4}-){3}\d{4}$"
+              maxLength="19"
               required
               value={data.creditCard}
               onChange={(e) => hanldeChange(e, e.target.value, 'creditCard')}
@@ -199,7 +199,7 @@ function SecondStage() {
           <section className="col--6 poster">
             <div className="poster__layout">
               <div className="poster__left">
-                <img src={ninty_day} className="poster__img obj--c" />
+                <img src={`https://raw.githubusercontent.com/chite/w4/master/src/asset/project${data.project}.svg`} className="poster__img obj--c" />
               </div>
               <hr />
               <div className="poster__right">
